@@ -87,7 +87,7 @@ else{
     else if(dado > no_atual->dado){
         no_atual->direito = Inserir(no_atual->direito, dado);
     }
-    return no_atual;
+ return no_atual;
 }
    
 
