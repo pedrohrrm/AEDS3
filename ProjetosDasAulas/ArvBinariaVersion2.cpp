@@ -23,9 +23,9 @@ void ArvoreBinaria::Inserir(int dado){
 
     No* no_atual;
 
-    //raiz é nulo
+    //raiz eh nulo
     if(raiz == NULL){
-        //Alocando um novo nó
+        //Alocando um novo no
         raiz = new No;
 
         raiz->dado = dado;
@@ -36,7 +36,7 @@ void ArvoreBinaria::Inserir(int dado){
     else{
         no_atual = raiz;
 
-        //Encontrar a posição para inserir o novo nó
+        //Encontrar a posicao para inserir o novo no
         while (no_atual != NULL) {
 
             if(dado < no_atual->dado){
@@ -66,31 +66,6 @@ void ArvoreBinaria::Inserir(int dado){
     }
 }
 
-No* ArvoreBinaria::Inserir(No *no_atual, int dado){
-    //caso Base
-    if(no_atual == NULL){
-        no_atual = new No;
-        no_atual->dado = dado;
-        no_atual->direito = NULL;
-        no_atual->esquerdo = NULL;
-
-        return no_atual;
-    }
-}
-//situação recursiva:
-else{
-    //fazer uma chamada recursiva a partir da ramificação esquerda
-    if( dado < no_atual->dado){
-        no_atual->esquerdo = Inserir(no_atual->esquerdo, dado);
-
-    }
-    else if(dado > no_atual->dado){
-        no_atual->direito = Inserir(no_atual->direito, dado);
-    }
- return no_atual;
-}
-   
-
 void ArvoreBinaria::Imprimir(No *no_atual){
     if(no_atual != NULL){
         cout << no_atual->dado << endl;
@@ -106,8 +81,8 @@ int main()
     ArvoreBinaria minha_arvore;
 
     minha_arvore.Criar();
-    minha_arvore.raiz = minha_arvore.Inserir(minha_arvore.raiz, 12);
-    //nesse caso inserir interativo seria: minha_arvore.Inserir(12);
+
+    minha_arvore.Inserir(12);
     minha_arvore.Inserir(99);
     minha_arvore.Inserir(120);
 
